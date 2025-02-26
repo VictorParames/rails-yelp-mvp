@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p>Endereço: <%= @restaurant.address %></p>
+  <p>Telefone: <%= @restaurant.phone_number %></p>
+  <p>Categoria: <%= @restaurant.category %></p>
+  <h2>Avaliações</h2>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li><%= review.content %> - Nota: <%= review.rating %></li>
+    <% end %>
+  </ul>
+  <%= link_to "Voltar", restaurants_path, class: "btn btn-secondary" %>
+</div>
